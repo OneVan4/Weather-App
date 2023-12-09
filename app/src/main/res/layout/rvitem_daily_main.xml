@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:layout_marginHorizontal="8dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvitem_dailyDate_MTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginStart="8dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="24 July" />
+
+        <ImageView
+            android:id="@+id/rvitem_dailyWeatherIc_IV"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sunny_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvitem_dailyHumidity_MTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rvitem_dailyWeatherIc_IV"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="24 %" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvitem_daily_min_temperature_MTV"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:gravity="end"
+            android:includeFontPadding="false"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="25\u00B0" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/rvitem_daily_max_temperature_MTV"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            android:includeFontPadding="false"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rvitem_daily_min_temperature_MTV"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="25\u00B0" />
+
+        <LinearLayout
+            android:id="@+id/rvitem_dailyDivider"
+            style="@style/dividerStyle"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/rvitem_daily_min_temperature_MTV"
+            app:layout_constraintEnd_toStartOf="@+id/rvitem_daily_min_temperature_MTV"
+            app:layout_constraintTop_toTopOf="@+id/rvitem_daily_min_temperature_MTV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
