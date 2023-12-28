@@ -6,9 +6,12 @@ import android.location.Location
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mashe4kinapogodaotivana.businessModel.DailyWeatherModel
+import com.example.mashe4kinapogodaotivana.businessModel.HourlyWeatherModel
+import com.example.mashe4kinapogodaotivana.businessModel.WeatherDataModel
 import com.example.mashe4kinapogodaotivana.databinding.ActivityMainBinding
 import com.example.mashe4kinapogodaotivana.presenters.MainPresenter
-import com.example.mashe4kinapogodaotivana.view.MainView
+import com.example.mashe4kinapogodaotivana.view.*
 import com.example.mashe4kinapogodaotivana.view.adapters.MainDailyWeatherAdapter
 import com.example.mashe4kinapogodaotivana.view.adapters.MainHourlyWeatherAdapter
 import com.google.android.gms.location.LocationCallback
@@ -108,8 +111,20 @@ class MainActivity :MvpAppCompatActivity(), MainView {
       binding.mainMyCityTV.text=data
     }
 
-    override fun displayCurrentDate(data: WeatherData) {
-
+    override fun displayCurrentDate(data: WeatherDataModel) {
+        data.apply {
+            binding.mainDateTV.text = current.dt.toDateFormatOF(DAY_FULL_MONTH_NAME)
+            binding.mainTemperatureTV.text=current.temp.toDegree()
+            daily[0].temp.apply {
+                binding.mainMaxWeatherTemperature.text =max.toDegree()
+                binding.mainMinWeatherTemperature.text=min.toDegree()
+            }
+            binding.mainPressureMTV.text= java.lang.StringBuilder().append(current.pressure.toString()).append("hPA").toString()
+            binding.mainHumidityMTV.text= java.lang.StringBuilder().append(current.humidity.toString()).append("%").toString()
+            binding.mainWindSpeedMTV.text=java.lang.StringBuilder().append(current.wind_speed.toString()).append("m/s").toString()
+            binding.mainSunsetMTV.text = current.sunset.toDateFormatOF(HOUR_DOUBLE_DOT_MINUTE)
+            binding.mainSunriseMTV.text = current.sunrise.toDateFormatOF(HOUR_DOUBLE_DOT_MINUTE)
+        }
     }
 
     override fun displayHourlyData(data: List<HourlyWeatherModel>) {
