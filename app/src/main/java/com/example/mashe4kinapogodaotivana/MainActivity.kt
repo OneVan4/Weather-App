@@ -12,7 +12,6 @@ import com.example.mashe4kinapogodaotivana.businessModel.WeatherDataModel
 import com.example.mashe4kinapogodaotivana.databinding.ActivityMainBinding
 import com.example.mashe4kinapogodaotivana.presenters.MainPresenter
 import com.example.mashe4kinapogodaotivana.view.*
-import com.example.mashe4kinapogodaotivana.view.adapters.MainDailyWeatherAdapter
 import com.example.mashe4kinapogodaotivana.view.adapters.MainHourlyWeatherAdapter
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
@@ -35,18 +34,18 @@ class MainActivity :MvpAppCompatActivity(), MainView {
     private lateinit var mLocation: Location
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container,DailyListFragment(),DailyListFragment::class.simpleName).commit()
+
         checkPermission()
         binding.mainHourlyWeatherRV.apply {
             adapter = MainHourlyWeatherAdapter()
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            setHasFixedSize(true)
-        }
-        binding.mainDailyWeatherRV.apply {
-            adapter = MainDailyWeatherAdapter()
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             setHasFixedSize(true)
         }
 
@@ -132,7 +131,7 @@ class MainActivity :MvpAppCompatActivity(), MainView {
     }
 
     override fun displayDailyData(data: List<DailyWeatherModel>) {
-        (binding.mainDailyWeatherRV.adapter as MainDailyWeatherAdapter).updateData(data)
+        (supportFragmentManager.findFragmentByTag( DailyListFragment::class.simpleName)as DailyListFragment).setData(data)
     }
 
     override fun displayError(error: Throwable) {

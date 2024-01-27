@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="9dp"
+    android:orientation="horizontal">
+    
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/search_city"
+                    style="@style/TextView_Style"
+                    tools:text="City name"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/state"
+                    style="@style/TextView_Style"
+                    tools:text=",  State"/>
+            </LinearLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/search_country"
+                style="@style/TextView_Style"
+                tools:text="Country"/>
+
+        </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+    <com.google.android.material.button.MaterialButton
+        android:id ="@+id/favorite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background ="?android:attr/selectableItemBackgroundBorderless"
+        android:checkable="true"
+        app:icon="@drawable/city_item_favorite_selector"
+        app:iconSize="38dp"/>
+    </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

@@ -12,11 +12,16 @@ import com.example.mashe4kinapogodaotivana.view.toDegree
 
 class MainDailyWeatherAdapter : BaseAdapter<DailyWeatherModel>() {
 
+    lateinit var clickListener:DayItemClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val view =
             RvitemDailyMainBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DailyWeatherViewHolder(view)
+    }
+
+    interface DayItemClickListener{
+        fun showDetail(data:DailyWeatherModel)
     }
 
     inner class DailyWeatherViewHolder(private val itemBinding: RvitemDailyMainBinding) :

@@ -2,4 +2,13 @@
     <string name="app_name">Mashe4kinaPogodaOtIvana</string>
     <string name="min">min</string>
     <string name="max">max</string>
+    <string name="temperature">Temperature</string>
+    <string name="f">F</string>
+    <string name="c">C</string>
+    <string name="WindSpeed">Wind Speed</string>
+    <string name="ms">m/s</string>
+    <string name="kmh">km/h</string>
+    <string name="pressure">pressure</string>
+    <string name="mmHG">mmHG</string>
+    <string name="hPa">hPa</string>
 </resources>
