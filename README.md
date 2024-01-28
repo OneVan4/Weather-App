@@ -37,7 +37,7 @@ Room:
 
 # Демонстрация приложения:
 <p align="center">
-  <img src=![image](https://github.com/OneVan4/Weather-App-UF/assets/113106342/571f7774-65cf-4fcd-8828-3eca1e0e0da6) width="300" height="600">
-  <img src=![image](https://github.com/OneVan4/Weather-App-UF/assets/113106342/0d58e4a9-855e-4877-a632-3cd1b1453340)
- width="300" height="600">
+  <img src="https://github.com/OneVan4/Weather-App-UF/assets/113106342/571f7774-65cf-4fcd-8828-3eca1e0e0da6" width="300" height="600">
+  <img src="https://github.com/OneVan4/Weather-App-UF/assets/113106342/0d58e4a9-855e-4877-a632-3cd1b1453340" width="300" height="600">
 </p>
+
